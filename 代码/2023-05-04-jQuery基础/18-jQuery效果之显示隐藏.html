@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 150px;
+            height: 300px;
+            background-color: pink;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <button>显示</button>
+    <button>隐藏</button>
+    <button>切换</button>
+    <div></div>
+    <script>
+        $(function () {
+            // 点击第一个按钮
+            $('button').eq(0).click(function (){
+                $('div').show(1000,function(){
+                    alert('显示了')
+                })
+            })
+
+            // 点击第二个按钮
+            $('button').eq(1).click(function (){
+                $('div').hide(1000,function(){
+                    alert('隐藏了')
+                })
+            })
+
+            // 点击第三个按钮，切换显示效果：显示则隐藏，隐藏则显示
+            $('button').eq(2).click(function (){
+                $('div').toggle(1000,function(){
+                    alert('切换了')
+                })
+            })
+
+            // 但是一般都不添加动画效果，太丑
+
+
+
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <ol>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li class="item">我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+    </ol>
+    <ul>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+    </ul>
+    <div class="current">俺有current</div>
+    <div>俺木有current</div>
+    <script>
+        $(function () {
+            // 选择除了自己之外的全部兄弟
+            $('ol .item').siblings('li').css('color', 'red')
+
+            // 第n个元素
+            // 1.选择器的方式，不推荐
+            $('ul li:eq(2)').css('color', 'blue')
+            // 2.方法的方式，推荐：因为eq写在括号外面灵活，方便把数字改成变量的形式
+            $('ul li').eq(2).css('color', 'pink')
+
+            // 判断是否有某个类名
+            console.log($('div').eq(0).hasClass('current'))
+            console.log($('div').eq(1).hasClass('current'))
+        })
+    </script>
+</body>
+
+</html>

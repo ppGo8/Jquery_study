@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <script>
+        // 使用jQuery实现排他思想
+        $(function () {
+            $('button').click(function () {
+                $(this).css('background-color','pink')
+
+                // 其他兄弟：隐式迭代，每个兄弟都应用了这个属性；
+                // 注意查找得到是伪数组，在js要单独对每个数组元素进行操作而不能对整理
+                $(this).siblings('button').css('background-color','')
+            })
+        })
+
+        // // 使用JS实现排他思量
+        // const btn = document.querySelectorAll('button')
+        // for (i = 0; i < btn.length; i++) {
+        //     btn[i].addEventListener('click', function () {
+        //         // 自己
+        //         this.style.backgroundColor = 'pink'
+
+        //     })
+        // }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <div></div>
+    <script>
+        // 1.DOM对象:用原生JS获取得到的对象
+        const div = document.querySelector('div')
+        console.dir(div)
+        // 2.jQuery对象:用jQuery方法获得的对象
+        $('div')
+        console.dir($('div'))
+        // jQuery对象只能使用jQuery方法,DOM对象则使用原生的JavaScript属性和方法
+        // $('div').style.display = 'none' // 错误写法,jQuery对象不能使用原生js的属性和方法
+
+    </script>
+</body>
+</html>

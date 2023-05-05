@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // 需求2:把jQuery写在上面,想要隐藏div
+        // 原生JS先有dom元素才能操作，等待页面加载完了才能执行js代码；这里也一样，
+        // 原生解决方法：load、domContentLoaded这两个时间
+        // jQuery的操作
+        // 1.等待页面DOM加载完毕再去执行JS代码
+        $(document).ready(function(){
+            $('div').hide()
+        })
+        // 2.等待页面DOM执行完毕再去执行JS代码
+        $(function () {
+            $('div').hide()
+        })
+    </script>
+
+    <div></div>
+    <!-- <script>
+        // 需求1：隐藏div
+        $('div').hide()
+    </script> -->
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+    <!-- 使用前记得引用 -->
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        // $是jQuery的别称，二者可以相互替换
+        jQuery(
+            function () {
+                alert(11)
+                $('div').hide()
+                jQuery('div').hide()
+            })
+        // $同时也是jQuery的顶级对象
+        
+    </script>
+</body>
+
+</html>

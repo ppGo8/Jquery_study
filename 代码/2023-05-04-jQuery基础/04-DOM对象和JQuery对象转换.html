@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <video src="mov.mp4" muted></video>
+    <script>
+        // 在特殊情况下需要这两个之间相互转换,比如有些DOM对象可以使用的方法但是JQuery对象不能使用，这时就需要转换。
+        // 1.DOM对象转换成JQuery对象
+        const vi = document.querySelector('video')
+        // $(vi) // 注意这里面不用写‘’,因为已经是变量了
+        // console.log($(vi))
+
+        // 2.JQuery对象转换成DOM对象
+        // JQuery对象没有这个方法，不能直接使用，要先转换
+        $(vi)[0].play()  
+        $(vi).get(0).play()
+
+
+    </script>
+</body>
+</html>
