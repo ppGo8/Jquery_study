@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <script>
+        // 需求：各div求和；修改不同div为不同颜色。
+        let sum = 0
+        const arr = ['red', 'pink', 'blue']
+        $('div').each(function (index, domEle) {
+            $(domEle).css('color',arr[index])
+            sum += parseInt($(domEle).text())
+        })
+        console.log(sum);
+
+        $.each([1,2,3],function(i,ele){
+            console.log(i);
+            console.log(ele);
+        })
+        $.each({
+            uname:'name',
+            age:12
+        },function(i,ele){
+            console.log(i);
+            console.log(ele);
+        })
+
+    </script>
+</body>
+
+</html>

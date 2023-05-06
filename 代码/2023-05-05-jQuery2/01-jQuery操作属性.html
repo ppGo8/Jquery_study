@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+
+</head>
+
+<body>
+    <a href="http://www.itcast.cn" title="都挺好">都挺好</a>
+    <input type="checkbox" name="" id="" checked>
+    <div index="1" data-index="2">我是div</div>
+    <span>123</span>
+    <script>
+        // 获得元素常见属性
+        console.log($('a').prop('href'))
+        console.log($('input').prop('checked'))
+        $('input').change(function () {
+            console.log($(this).prop('checked'))
+        })
+
+        // 获得自定义属性
+        console.log($('div').attr('index'));
+        // 这样设置属性值是不对的
+        // $('div').attr('index') = 3
+        $('div').attr('index',100)
+        console.log($('div').attr('index'));
+        // h5自定义属性
+        console.log($('div').attr('data-index'));
+
+        // data数据缓存
+        $("span").data("uname", "andy")
+        console.log($('span').data('uname'));
+        // data数据缓存可以获取h5属性
+        console.log($('div').data('index'));
+
+
+    </script>
+</body>
+
+</html>

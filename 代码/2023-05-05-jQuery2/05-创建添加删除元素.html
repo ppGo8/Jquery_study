@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <ul>
+        <li>原先的小li</li>
+    </ul>
+    <div>我是原来的div</div>
+    <script>
+        // 创建li
+        const li = $('<li>我是jQuery创建的小li</li>')
+
+        // 添加元素
+        // (1)内部添加
+        // $('ul').append(li)  // 添加到最后面
+        // $('ul').prepend(li) // 添加到最前面
+
+        // (2)外部添加
+        const div = $('<div>新创建的div</div>')
+        // $('div').before(div)
+        $('div').after(div)
+
+        // 删除元素
+        // $('ul').remove() 
+        $('ul').empty()
+        $('div').html('')
+        
+        </script>
+</body>
+
+</html>

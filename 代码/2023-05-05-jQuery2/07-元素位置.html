@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .father {
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+            margin: 100px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .son {
+            width: 150px;
+            height: 150px;
+            background-color: purple;
+            position: absolute;
+            left: 10px;
+            top: 10px;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <script>
+        $(function () {
+            // 获取并设置元素相对于文档的位置
+            console.log($('.son').offset())
+            // console.log($('.son').offset({
+                // top:150,
+                // left:150
+            // }))
+            // console.log($('.son').offset().top)
+            // console.log($('.son').offset().left)
+        
+            // 获取元素相对于最近一级有父级定位的位置
+            console.log($('.son').position())
+
+        })
+    </script>
+</body>
+
+</html>

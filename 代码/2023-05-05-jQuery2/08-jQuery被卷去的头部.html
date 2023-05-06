@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            height: 2000px;
+        }
+
+        .back {
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+            right: 30px;
+            bottom: 100px;
+            display: none;
+        }
+
+        .container {
+            width: 900px;
+            height: 500px;
+            background-color: skyblue;
+            margin: 400px auto;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="back">返回顶部</div>
+    <div class="container">
+    </div>
+    <script>
+        // 需求：当划到div盒子的上沿时，显示返回顶部
+        $(function () {
+            $(window).scroll(
+                function () {
+                    if ($(document).scrollTop() >= $('.container').offset().top) {
+                        $('.back').fadeIn()
+                    } else {
+                        $('.back').fadeOut()
+                    }
+                }
+            )
+
+            // 返回顶部
+            // 返回顶部
+            $(".back").click(function() {
+                // $(document).scrollTop(0);
+                $("body, html").stop().animate({
+                    scrollTop: 0
+                });
+                // $(document).stop().animate({
+                //     scrollTop: 0
+                // }); 不能是文档而是 html和body元素做动画
+            })
+
+        })
+    </script>
+</body>
+
+</html>
