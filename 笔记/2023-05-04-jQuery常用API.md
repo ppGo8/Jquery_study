@@ -1,7 +1,5 @@
 # jQuery常用API
 
-![image-20230504164344930](2023-05-04-jQuery常用API.assets/image-20230504164344930.png)
-
 ## jQuery选择器
 
 ### jQuery基础选择器
@@ -66,7 +64,7 @@ show()  显示元素
 
 ### jQuery中的排他思想
 
-- 当前元素设置样式，其余兄弟元素清楚样式。
+- 当前元素设置样式，其余兄弟元素清除样式。
 
   ```javascript
   $(function () {
@@ -159,7 +157,7 @@ $(this).css('background-color', 'pink').siblings().css('background-color', '')
        $(function () {
            $('.tab_list li').click(function () {
                // tab栏切换模块
-               // 排他思想:自己添加,自己的所有兄弟全部清除
+               // 自己显示被点击IDE效果，排他思想:自己添加,自己的所有兄弟全部清除
                $(this).addClass('current').siblings().removeClass('current')
                let index = $(this).index()
    
@@ -410,7 +408,7 @@ animate(params,[speed],[easing],[fn])
 
 - easing:用来指定切换效果，默认是swing，还可以用linear
 
-- fn:回调函数，在动画完成时执行的操作，每个元素执行一次
+- **fn:回调函数，在动画完成时执行的操作，每个元素执行一次**
 
 #### 王者荣耀案例
 

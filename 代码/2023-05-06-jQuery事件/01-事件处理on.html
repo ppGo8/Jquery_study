@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <ul>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+    </ul>
+
+    <script>
+
+        $(function () {
+            // 单个事件
+            // $('div').click(function () {
+            //     $(this).css('backgroundColor', 'red')
+            // })
+            // $('div').mouseenter(function () {
+            //     $(this).css('backgroundColor', 'purple')
+            // })
+
+
+            // 多个事件on
+            // (1)相同处理程序
+            // $('div').on('click mouseleave', function () {
+            //     $(this).css('backgroundColor', 'purple')
+            // })
+
+            // (2)不同处理程序，处理程序要写在函数里面
+            $('div').on({
+                click: function () {
+                    $(this).css('backgroundColor', 'red')
+                },
+                mouseenter: function () {
+                    $(this).css('backgroundColor', 'purple')
+                }
+
+            })
+
+            // (3)on实现事件委托，把li的事件绑定在父亲身上
+            $('ul').on('click','li',function ( ){
+                alert(11)
+            })
+
+            // (4)on实现动态绑定，在他后面创建的元素也会被绑定
+            // 创建
+            const li = $('<li>我是新创建的li</li>')
+            // 添加到元素中
+            $('ul').append(li) // 点击新添加的li依然有弹窗
+
+
+
+
+        })
+    </script>
+</body>
+
+</html>

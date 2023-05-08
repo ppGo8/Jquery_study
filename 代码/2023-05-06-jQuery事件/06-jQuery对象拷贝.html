@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function () {
+            const targetObj = {}
+            const obj1 = {
+                id: 1,
+                name: 'andy'
+            }
+            const obj2 = {
+                id: 1,
+                name: 'andy',
+                person: {
+                    age: 18,
+                    sex: '男'
+                }
+            }
+            // 浅拷贝,对象中存储的简单数据类型更改值浅拷贝不受影响
+            // (1)简单数据类型
+            $.extend(targetObj, obj1)
+            targetObj.name = 'li'
+            console.log(targetObj)
+            console.log(obj1)
+            // (2)复杂数据类型
+            // $.extend(targetObj, obj2)
+            // targetObj.id = 2
+            // targetObj.person.age = 20 // 更改目标对象的值,被拷贝对象的值也会改变
+            // console.log(targetObj);
+            // console.log(obj2)
+
+            // 深拷贝：各个值之间均不受影响
+            $.extend(true, targetObj, obj2)
+            targetObj.person.age = 20 // 更改目标对象的值,被拷贝对象的值也会改变
+            console.log(targetObj);
+            console.log(obj2)
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

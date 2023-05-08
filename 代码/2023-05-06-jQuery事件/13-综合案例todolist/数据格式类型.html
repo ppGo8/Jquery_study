@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 数组对象存放数据
+        const data = [
+            {
+                title: '看完jQuery视频',
+                done: false
+            }, {
+                title: '复习商务统计学',
+                done: false
+            },
+
+        ]
+
+        // 本地存储只能存储字符串格式,取出来需要从字符串数据类型修改为对象
+        // 对象转换成字符串 JSON.stringify()
+        // 字符串转换成对象 JSON.parse()
+        localStorage.setItem('list', JSON.stringify(data))
+        const list = JSON.parse(localStorage.getItem('list'))
+        console.log(list[0].title)
+    </script>
+</body>
+
+</html>

@@ -152,7 +152,7 @@ $.each(object,function(index,ele){xxx;})
 ### 创建元素
 
 ```javascript
-$("html元素和内容") 
+$("html元素和内容")  // 但是建议这里只写html元素，html文本内容使用html()方法单独设置
 ```
 
 创建后在页面不显示，还需要将创建的标签添加的页面中。
@@ -237,6 +237,8 @@ width()/height()括号里添加值就是赋值操作
    - 这个方法只能获取，不能设置。
 
 3. scrollTop()/scrollLeft()     **获取或设置元素被卷去的头部/左侧距离**
+
+   一般都是获取或设置document对象的scrollTop或scrollleft，控制页面的跳转和显示。
 
    ```javascript
    // 需求：当划到div盒子的上沿时，显示返回顶部
